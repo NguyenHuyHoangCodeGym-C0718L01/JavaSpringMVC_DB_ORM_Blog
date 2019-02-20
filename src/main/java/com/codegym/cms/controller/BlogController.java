@@ -9,6 +9,7 @@ import com.codegym.cms.service.Service;
 import com.codegym.cms.service.BlogServiceImpl;
 import com.codegym.cms.service.TagServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,14 +22,18 @@ import java.util.List;
 
 @Controller
 public class BlogController {
-    @Autowired
-    private Service blogService = new BlogServiceImpl();
 
     @Autowired
-    private Service authorService = new AuthorServiceImpl();
+    @Qualifier("blog service")
+    private Service blogService;
 
     @Autowired
-    private Service tagService = new TagServiceImpl();
+    @Qualifier("author service")
+    private Service authorService;
+
+    @Autowired
+    @Qualifier("tag service")
+    private Service tagService;
 
     @GetMapping("/create-blog")
     public ModelAndView showCreateForm(){

@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 public class BlogServiceImpl implements Service<Blog> {
     @Autowired
-    private BlogRepository blogRepository = new BlogRepositoryImpl();
+    private BlogRepository blogRepository;
 
     @Override
     public List<Blog> findAll() {

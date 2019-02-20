@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 public class TagServiceImpl implements Service<Tag> {
     @Autowired
-    private TagRepository tagRepository = new TagRepositoryImpl();
+    private TagRepository tagRepository;
 
     @Override
     public List<Tag> findAll() {

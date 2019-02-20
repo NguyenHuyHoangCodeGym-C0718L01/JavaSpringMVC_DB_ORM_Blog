@@ -55,6 +55,7 @@ public class ApplicationConfig  extends WebMvcConfigurerAdapter implements Appli
     }
 
     @Bean
+    @Qualifier(value = "blog service")
     public Service blogService(){
         return new BlogServiceImpl();
     }
@@ -65,6 +66,7 @@ public class ApplicationConfig  extends WebMvcConfigurerAdapter implements Appli
     }
 
     @Bean
+    @Qualifier(value = "author service")
     public Service authorService(){
         return new AuthorServiceImpl();
     }
@@ -75,6 +77,7 @@ public class ApplicationConfig  extends WebMvcConfigurerAdapter implements Appli
     }
 
     @Bean
+    @Qualifier(value = "tag service")
     public Service tagService(){
         return new TagServiceImpl();
     }

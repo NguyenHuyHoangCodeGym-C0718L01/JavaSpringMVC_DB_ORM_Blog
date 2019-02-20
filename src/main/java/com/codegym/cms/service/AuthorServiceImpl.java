@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 public class AuthorServiceImpl implements Service<Author> {
     @Autowired
-    private AuthorRepository authorRepository = new AuthorRepositoryImpl();
+    private AuthorRepository authorRepository;
 
     @Override
     public List<Author> findAll() {
