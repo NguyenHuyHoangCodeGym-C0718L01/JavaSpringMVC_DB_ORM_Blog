@@ -1,16 +1,13 @@
 package com.codegym.cms.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "tag")
 @Entity
 public class Tag {
 
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String name;
 

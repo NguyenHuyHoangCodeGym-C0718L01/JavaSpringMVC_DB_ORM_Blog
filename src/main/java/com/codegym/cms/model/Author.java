@@ -1,16 +1,13 @@
 package com.codegym.cms.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "author")
 @Entity
 public class Author {
 
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String name;
     private int age;

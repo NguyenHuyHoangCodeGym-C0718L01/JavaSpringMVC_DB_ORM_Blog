@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,8 +46,8 @@ public class BlogController {
 
     @PostMapping("/create-blog")
     public ModelAndView saveBlog(@ModelAttribute("blog") Blog blog){
-        List<Blog> blogs = blogService.findAll();
-        blog.setId(blogs.get(blogs.size()-1).getId()+1);
+//        List<Blog> blogs = blogService.findAll();
+//        blog.setId(blogs.get(blogs.size()-1).getId()+1);
         blogService.save(blog);
 
         ModelAndView modelAndView = new ModelAndView("/blog/create");
